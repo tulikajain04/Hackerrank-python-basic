@@ -1,0 +1,13 @@
+if __name__ == '__main__':
+    grade=[]
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        grade.append([name, score])
+    grade=sorted(grade, key=lambda x: x[1])
+    m=grade[0][1]
+    for i, j in grade:
+        if j>m:
+            m=j
+            break
+    print('\n'.join([i for i, j in sorted(grade) if j==m]))
